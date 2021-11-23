@@ -6,5 +6,7 @@ class Customer(TimeStampedModel):
     """
     This represents a customer
     """
-    pass
+    first_name = models.CharField(max_length=30, blank=False, null=False)
+    last_name = models.CharField(max_length=30, blank=False, null=False)
+    dob = models.DateField(blank=False, null=False)
 
