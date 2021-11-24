@@ -4,6 +4,7 @@ from .serializers import CustomerSerializer
 
 class CreateCustomerAPIView(CreateAPIView):
     """
-    Generic View for Customer
+    View to allow the creation of new customer
     """
     serializer_class = CustomerSerializer
+    
