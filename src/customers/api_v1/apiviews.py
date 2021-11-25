@@ -13,7 +13,7 @@ class CreateCustomerAPIView(CreateAPIView):
 
 class CustomerListAPIView(ListAPIView):
     serializer_class = CustomerSerializer
-    search_fields = ['dob']
+    search_fields = ['dob', 'user__first_name', 'user__last_name', 'policy__coverage__type']
     queryset = Customer.objects.all()
     filter_backends = (filters.SearchFilter,)
 

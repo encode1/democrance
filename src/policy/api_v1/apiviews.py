@@ -1,4 +1,5 @@
 from rest_framework.generics import CreateAPIView, GenericAPIView, ListAPIView, RetrieveAPIView
+from rest_framework import filters
 from django.shortcuts import get_object_or_404
 from rest_framework.mixins import CreateModelMixin, UpdateModelMixin
 from .serializers import CreateQuoteSerializer, UpdateQuoteSerializer, PolicyHistorySerializer, PolicySerializer
@@ -50,6 +51,8 @@ class QuoteAPIView(CreateModelMixin, UpdateModelMixin, GenericAPIView):
 
 class PolicyListAPIView(ListAPIView):
     serializer_class = PolicySerializer
+    search_fields = ['customer__user__first_name', 'customer__user__last_name', 'coverage__type']
+    filter_backends = (filters.SearchFilter,)
 
     def get_queryset(self):
         """
