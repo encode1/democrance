@@ -51,7 +51,7 @@ class QuoteAPIView(CreateModelMixin, UpdateModelMixin, GenericAPIView):
 
 class PolicyListAPIView(ListAPIView):
     serializer_class = PolicySerializer
-    search_fields = ['customer__user__first_name', 'customer__user__last_name', 'coverage__type']
+    search_fields = ['customer__user__first_name', 'customer__user__last_name', 'coverage__type', 'customer__dob']
     filter_backends = (filters.SearchFilter,)
 
     def get_queryset(self):
