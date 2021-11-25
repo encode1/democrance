@@ -18,13 +18,26 @@ Python3
 Setup Environment
 
 ```
-
+# create and activate virtual environment
+$ python3 -m venv .
+$ source ./bin/activate
+# clone repo
+$ git clone https://github.com/encode1/
+# install dependencies
+$ pip install -r requirements.txt
+$ cd src
 ```
 
 Run application
 
 ```
+$ python manage.py runserver
+```
 
+Run test
+
+```
+$ python manage.py test
 ```
 
 ## Built With
