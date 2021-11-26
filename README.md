@@ -22,7 +22,7 @@ Setup Environment
 $ python3 -m venv .
 $ source ./bin/activate
 # clone repo
-$ git clone https://github.com/encode1/
+$ git clone https://github.com/encode1/democrance.git
 # install dependencies
 $ pip install -r requirements.txt
 $ cd src
