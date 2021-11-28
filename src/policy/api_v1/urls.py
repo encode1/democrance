@@ -7,5 +7,5 @@ urlpatterns = [
     # path('quote/<int:pk>/', UpdateQuoteAPIView.as_view(), name='update_quote'),
     path('policies/', PolicyListAPIView.as_view(), name='policy_list'),
     path('policies/<int:pk>/', PolicyRetrieveAPIView.as_view(), name='policy_details'),
-    path('policies/<int:pk>/history/', PolicyHistoryAPIView.as_view(), name='policy_history'),
+    path('policies/<int:id>/history/', PolicyHistoryAPIView.as_view(), name='policy_history'),
 ]

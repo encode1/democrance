@@ -34,6 +34,9 @@ class QuoteAPIView(CreateModelMixin, UpdateModelMixin, GenericAPIView):
         return self.create(request, *args, **kwargs)
 
     def patch(self, request, *args, **kwargs):
+        """
+        View that allow the update the status of a quote
+        """
         self.quote_id = request.data.get('quote_id')
         return self.partial_update(request, *args, **kwargs)
 
@@ -80,6 +83,6 @@ class PolicyHistoryAPIView(ListAPIView):
 
     def get_queryset(self):
         return self.queryset.filter(
-            policy__pk=self.kwargs['pk']
+            policy__id=self.kwargs['id']
         )
     

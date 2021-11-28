@@ -88,7 +88,7 @@ class PolicySerializer(serializers.ModelSerializer):
     Serializer for Policy
     """
     customer = CustomerSerializer(read_only=True)
-    type = serializers.CharField(read_only=True, source='coverage.title')
+    type = serializers.CharField(read_only=True, source='coverage.type')
     class Meta:
         model = Policy
         fields = ('id', 'type', 'customer', 'premium', 'cover','state')
